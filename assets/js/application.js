@@ -1,3 +1,3 @@
-Todos = Ember.Application.create();
+App = Ember.Application.create();
 
-Todos.ApplicationAdapter = DS.FixtureAdapter.extend();
+App.ApplicationAdapter = DS.FixtureAdapter.extend();
