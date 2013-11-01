@@ -13,11 +13,11 @@
           <h1>todos</h1>
           <input type="text" id="new-todo" placeholder="What needs to be done?" />
         </header>
-        
+
           <section id="main">
             <ul id="todo-list">
               {{#each}}
-                <li>
+                <li {{bindAttr class="isCompleted:complete"}}>
                   <input type="checkbox" class="toggle">
                   <label>{{title}}</label><button class="destroy"></button>
                 </li>
