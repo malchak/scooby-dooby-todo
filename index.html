@@ -7,56 +7,58 @@
   </head>
   <body>
     <script type="text/x-handlebars" data-template-name="todos">
+
       <section id="todoapp">
-      <header id="header">
-        <h1>todos</h1>
-        <input type="text" id="new-todo" placeholder="What needs to be done?" />
-      </header>
+        <header id="header">
+          <h1>todos</h1>
+          <input type="text" id="new-todo" placeholder="What needs to be done?" />
+        </header>
+        
+          <section id="main">
+            <ul id="todo-list">
+              {{#each}}
+                <li>
+                  <input type="checkbox" class="toggle">
+                  <label>{{title}}</label><button class="destroy"></button>
+                </li>
+              {{/each}}
+            </ul>
 
-      <section id="main">
-        <ul id="todo-list">
-          {{#each}}
-            <li>
-              <input type="checkbox" class="toggle">
-              <label>{{title}}</lable><button class="destory"></button>
-            </li>
-          {{/each}}
-        </ul>
+            <input type="checkbox" id="toggle-all">
+          </section>
 
-        <input type="checkbox" id="toggle-all">
-      </section>
+          <footer id="footer">
+            <span id="todo-count">
+              <strong>2</strong> todos left</span>
+            <ul id="filters">
+              <li>
+                <a href="all" class="selected">All</a>
+              </li>
+              <li>
+                <a href="active">Active</a>
+              </li>
+              <li>
+                <a href="completed">Completed</a>
+              </li>
+            </ul>
 
-        <footer id="footer">
-          <span id="todo-count">
-            <strong>2</strong> todos left
-          </span>
-          <ul id="filters">
-            <li>
-              <a href="all" class="selected">All</a>
-            </li>
-            <li>
-              <a href="active">Active</a>
-            </li>
-            <li>
-              <a href="completed">Completed</a>
-            </li>
-          </ul>
-
-          <button id="clear-completed">
-            Clear completed (1)
-          </button>
-        </footer>
+            <button id="clear-completed">
+              Clear completed (1)
+            </button>
+          </footer>
       </section>
 
       <footer id="info">
         <p>Double-click to edit a todo</p>
       </footer>
+      
     </script>
     
     <script src="assets/js/libs/jQuery.js"></script>
     <script src="assets/js/libs/handlebars-1.0.0.js"></script>
     <script src="assets/js/libs/ember.js"></script>
     <script src="assets/js/libs/ember-data.js"></script>
+    
     <script src="assets/js/application.js"</script>
     <script src="assets/js/router.js"</script>
     <script src="assets/js/models/app.js"</script>
