@@ -16,9 +16,9 @@
 
           <section id="main">
             <ul id="todo-list">
-              {{#each}}
+              {{#each itemController="todo"}}
                 <li {{bindAttr class="isCompleted:complete"}}>
-                  <input type="checkbox" class="toggle">
+                  {{input type="checkbox" checked="isCompeted" class="toggle"}}
                   <label>{{title}}</label><button class="destroy"></button>
                 </li>
               {{/each}}
@@ -63,5 +63,6 @@
     <script src="assets/js/router.js"</script>
     <script src="assets/js/models/todo.js"</script>
     <script src="assets/js/controllers/todos_controller.js"></script>
+    <script src="assets/js/controllers/todo_controller.js"></script>
   </body>
 </html>
